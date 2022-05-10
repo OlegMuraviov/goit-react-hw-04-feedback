@@ -1,0 +1,15 @@
+.container {
+  margin: 0 auto;
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+.title {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 30px;
+}
+.list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
