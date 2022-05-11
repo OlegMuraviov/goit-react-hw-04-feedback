@@ -18,6 +18,8 @@ const App = () => {
   const [positiveFeedbackPercentage, setPositiveFeedbackPercentage] =
     useState(0);
 
+  const allFeedbackOptions = { good, neutral, bad };
+
   useEffect(() => {
     setCountTotalFeedback(good + neutral + bad);
     setPositiveFeedbackPercentage((100 / countTotalFeedback) * good);
@@ -47,10 +49,7 @@ const App = () => {
           feedbackOptions={feedbackOptions}
         />
         <Statistics
-          statisticsOptions={feedbackOptions}
-          good={good}
-          neutral={neutral}
-          bad={bad}
+          allFeedbackOptions={allFeedbackOptions}
           total={countTotalFeedback}
           positivePercentage={positiveFeedbackPercentage}
         />
