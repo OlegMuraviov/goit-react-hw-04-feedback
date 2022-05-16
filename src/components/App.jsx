@@ -14,16 +14,9 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const [countTotalFeedback, setCountTotalFeedback] = useState(0);
-  const [positiveFeedbackPercentage, setPositiveFeedbackPercentage] =
-    useState(0);
-
   const allFeedbackOptions = { good, neutral, bad };
-
-  useEffect(() => {
-    setCountTotalFeedback(good + neutral + bad);
-    setPositiveFeedbackPercentage((100 / countTotalFeedback) * good);
-  }, [good, neutral, bad, countTotalFeedback]);
+  const total = good + neutral + bad;
+  const positiveFeedbackPercentage = (100 / total) * good;
 
   const onLeaveFeedback = id => {
     switch (id) {
@@ -50,7 +43,7 @@ const App = () => {
         />
         <Statistics
           allFeedbackOptions={allFeedbackOptions}
-          total={countTotalFeedback}
+          total={total}
           positivePercentage={positiveFeedbackPercentage}
         />
       </Section>
